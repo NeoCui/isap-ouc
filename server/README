@@ -1,0 +1,42 @@
+说明
+========
+
+安装
+====
+参考INSTALL。
+补充：服务器程序用pyinstaller编译成三个可执行文件：isapouc，isapoucd，grabnews。这三个文件全部放在目录/usr/share/isapoucserver，它们运行不依赖python 解释器。/usr/bin文件夹存放它们的链接。
+
+          isapoucd:即isapouc daemon，是一个守护进程，作为Linux服务运行于后台，监听10000端口，处理来自客户端的各种请求。
+
+          grabnews:也是一个守护进程，作为Linux服务运行于后台。每间隔60s登录学校信息发布网站检查是否有新闻更新。
+
+          isapouc:是一个Linux命令，用法如下（这也是执行 isapouc -h 后打印出的信息）：
+
+            Usage: isapouc -m [MODE] -n [NUMBER] -p [PASSWORD] -t [TERM]
+
+             MODE:
+              a：抓取指定学期选课前的所有课程 
+              c：抓取指定学期选课后所有用户的已选课程
+              s：抓取指定学期用户的所有成绩
+             NUMBER:
+              学号
+             PASSWORD:
+              密码
+             TERM:
+              学期
+
+            Options:
+              -h, --help            show this help message and exit
+              -m MODE, --mode=MODE  模式
+              -n NUMBER, --number=NUMBER
+                                                         学号
+              -p PASSWORD, --password=PASSWORD
+                                                         密码
+              -t TERM, --term=TERM       学期
+
+运行
+====
+service isapouc start		开启服务isapoucd（模仿MySQL，执行 service mysql start 后就会启动服务mysqld，下同），工作日志保存在 /var/log/isapouclog.log
+service isapouc stop		关闭服务isapoucd
+service isapouc restart		重新启动服务isapoucd
+

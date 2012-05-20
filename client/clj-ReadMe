@@ -1,0 +1,20 @@
+File: isapouc/src/client/*
+Copyright: 2011, Luji Cui <cuiluji@gmail.com>
+
+File:Wait.py,the waiting animation window when import news.
+	preprocess.py,create file 'myconfig' and init user information.
+	Login.py,the login window.
+	isapoucclient.py,communication module responds to transfer information between the client and the sever.
+	test.py,the test file to help developer debug the application.
+
+File:option/OptionModule.py,the user customized window to choose the news which user needs. 
+
+File:user/CFriend.py,window to show friend's course information in list and table forms.
+	user/Dialog.py,the reminder of fresh news.
+	user/InfoFrame.py,dialog to show the introduction of this application,including program introduction and developer's information.
+	user/Remind.py,dialog to list the people's information who want to add the user as their friend
+	user/SecFrame.py,according to the news headline to display the news content in this window.
+	user/UserModule.py,user's main interface window.
+
+File:images/ouc.png, images/processing.png, images/search.png,
+	images/Taskbar.png, images/Wait.gif

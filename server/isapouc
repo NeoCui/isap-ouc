@@ -1,0 +1,44 @@
+#!/bin/bash
+#descrīption: isapouc 
+DST1=/usr/bin/isapoucd
+DST2=/usr/bin/grabnews
+NAME1=isapoucd
+NAME2=grabnews
+LOG=/var/log/isapouclog.log
+LOGERR=/var/log/isapouclogerr.log
+
+start()
+{
+	echo  "starting service isapoucd..."
+	exec ${DST1} 1>${LOG} 2>&1 &
+	exec ${DST2} 1>${LOG} 2>&1 &
+	echo  "service start success."
+}
+
+stop()
+{
+	echo  "shutting down isapoucd..."
+	killall -9  ${NAME1}
+	killall -9  ${NAME2}
+	echo  "service stop success."
+}
+case "$1" in
+	start)
+		start
+		;;
+
+	stop)
+		stop
+		;;
+	reatart)
+		stop
+		start
+		;;
+esac
+exit
+
+
+
+
+
+

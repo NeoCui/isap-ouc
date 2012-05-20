@@ -1,0 +1,13 @@
+INSTALL
+==========
+#数据库使用mysql
+#安装前确保已经导入数据库
+#mysqldump -u root -p isapouc < isapouc.sql
+
+cd /yourpath/isapouc/server
+sudo ./install.sh
+
+#进行的操作:
+#1.将整个目录isapoucserver（目录中包括isapouc、isapoucd 以及它们所依赖的库）复制到目录/usr/share
+#2.将脚本isapouc（详见README）复制到目录/etc/init.d
+#3.添加系统服务 isapouc
